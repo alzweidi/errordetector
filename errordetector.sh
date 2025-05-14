@@ -5,7 +5,7 @@ set -e
 # Define variables
 LOG_FILE="$HOME/nockchain/nockchain/miner.log"
 ERROR_LOG="$HOME/nockchain/error_log.txt"
-EMAIL_LIST="ibraheem9omar@gmail.com youremailhere@gmail.com"
+EMAIL_LIST="ibraheem9omar@gmail.com alzweidi@gmail.com"
 SMTP_SERVER="smtp.gmail.com"
 SMTP_PORT="587"
 SMTP_USER="79sends@gmail.com"
