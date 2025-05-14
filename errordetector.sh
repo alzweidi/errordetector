@@ -5,11 +5,17 @@ set -e
 # Define variables
 LOG_FILE="$HOME/nockchain/nockchain/miner.log"
 ERROR_LOG="$HOME/nockchain/error_log.txt"
-EMAIL_LIST="ibraheem9omar@gmail.com alzweidi@gmail.com"
+EMAIL_LIST="ibraheem9omar@gmail.com youremailhere@gmail.com"
 SMTP_SERVER="smtp.gmail.com"
 SMTP_PORT="587"
 SMTP_USER="79sends@gmail.com"
 SMTP_PASSWORD="rfkfwalbaktmyqwl"
+
+# Create the error log file if it does not exist
+if [ ! -f "$ERROR_LOG" ]; then
+  touch "$ERROR_LOG"
+  echo "[`date`] Created error log file at $ERROR_LOG"
+fi
 
 # Check for errors in the miner log every minute
 while true; do
