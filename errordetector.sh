@@ -3,13 +3,19 @@
 set -e
 
 # Define variables
-LOG_FILE="/root/nockchain/miner/logs/miner.log"
+LOG_FILE="$HOME/nockchain/nockchain/miner.log"
 ERROR_LOG="$HOME/nockchain/error_log.txt"
-EMAIL_LIST="ibraheem9omar@gmail.com"
+EMAIL_LIST="ibraheem9omar@gmail.com alzweidi@gmail.com"
 SMTP_SERVER="smtp.gmail.com"
 SMTP_PORT="587"
 SMTP_USER="79sends@gmail.com"
 SMTP_PASSWORD="rfkfwalbaktmyqwl"
+
+# Ensure the log file exists, create if it doesn't
+if [ ! -f "$LOG_FILE" ]; then
+  echo "[`date`] miner.log does not exist. Creating an empty miner.log file." >> "$LOG_FILE"
+  touch "$LOG_FILE"
+fi
 
 # Create the error log file if it does not exist
 if [ ! -f "$ERROR_LOG" ]; then
