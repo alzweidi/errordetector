@@ -4,36 +4,23 @@ set -e
 
 # Define variables
 LOG_FILE="$HOME/nockchain/nockchain/miner.log"
-ERROR_LOG="$HOME/nockchain/error_log.txt"
 EMAIL_LIST="ibraheem9omar@gmail.com alzweidi@gmail.com"
 SMTP_SERVER="smtp.gmail.com"
 SMTP_PORT="587"
 SMTP_USER="79sends@gmail.com"
 SMTP_PASSWORD="rfkfwalbaktmyqwl"
 
-# Ensure the log file exists, create if it doesn't
-if [ ! -f "$LOG_FILE" ]; then
-  echo "[`date`] miner.log does not exist. Creating an empty miner.log file." >> "$LOG_FILE"
-  touch "$LOG_FILE"
-fi
-
-# Create the error log file if it does not exist
-if [ ! -f "$ERROR_LOG" ]; then
-  touch "$ERROR_LOG"
-  echo "[`date`] Created error log file at $ERROR_LOG"
-fi
-
 # Check for errors in the miner log every minute
 while true; do
   echo "[`date`] Checking logs for errors..."
-  # Search for errors in the log file (can be customized for different errors)
-  grep -i "error\|fail\|exception" "$LOG_FILE" > "$ERROR_LOG"
 
-  if [ -s "$ERROR_LOG" ]; then
+  # Search for errors in the log file (can be customized for different errors)
+  ERROR_DETAILS=$(grep -i "error\|fail\|exception" "$LOG_FILE")
+
+  if [ ! -z "$ERROR_DETAILS" ]; then
     echo "[`date`] Error found! Sending email notification..."
 
     # Prepare the email content
-    ERROR_DETAILS=$(cat "$ERROR_LOG")
     SUBJECT="NockChain Miner Error Detected"
     MESSAGE="An error was detected in your NockChain miner logs.\n\nDetails:\n$ERROR_DETAILS"
 
