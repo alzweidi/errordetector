@@ -3,7 +3,7 @@
 set -e
 
 # Define variables
-LOG_FILE="$HOME/error_log.txt"  # Monitor this file instead of miner.log
+LOG_FILE="$HOME/nockchain/error_log.txt"  # Monitor this file instead of miner.log
 EMAIL_LIST="ibraheem9omar@gmail.com alzweidi@gmail.com"
 SMTP_SERVER="smtp.gmail.com"
 SMTP_PORT="587"
