@@ -4,7 +4,7 @@ set -e
 
 # Define variables
 LOG_FILE="$HOME/nockchain/error_log.txt"  # Monitor this file instead of miner.log
-EMAIL_LIST="ibraheem9omar@gmail.com alzweidi@gmail.com"
+EMAIL_LIST="ibraheem9omar@gmail.com"
 SMTP_SERVER="smtp.gmail.com"
 SMTP_PORT="587"
 SMTP_USER="79sends@gmail.com"
