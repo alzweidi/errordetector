@@ -3,7 +3,7 @@
 set -e
 
 # Define variables
-LOG_FILE="$HOME/nockchain/nockchain/miner.log"
+LOG_FILE="/root/nockchain/miner/logs/miner.log"
 ERROR_LOG="$HOME/nockchain/error_log.txt"
 EMAIL_LIST="ibraheem9omar@gmail.com"
 SMTP_SERVER="smtp.gmail.com"
